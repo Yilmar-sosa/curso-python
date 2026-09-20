@@ -3,12 +3,12 @@
 Estudiante: Yilmar
 Carpeta del curso: C:\Users\USUARIO\Documents\python
 Repositorio: https://github.com/Yilmar-sosa/curso-python
-Última sesión: (sin sesiones aún)
+Última sesión: 20 sep 2026 — Sesión 1 (en curso, estudiante continuará desde casa)
 
 > Este curso es independiente del curso de C (Documents\c ↔ curso-c). No mezclar.
 
 ## Estado de sesiones
-- Sesión 1 — Pensamiento computacional y algoritmos: SIN INICIAR
+- Sesión 1 — Pensamiento computacional y algoritmos: EN CURSO
 - Sesión 2 — Bases de programación en Python: SIN INICIAR
 - Sesión 3 — Condicionales, listas y bucles: SIN INICIAR
 - Sesión 4 — Simulacro Módulo I (≥70%): SIN INICIAR
@@ -19,13 +19,15 @@ Repositorio: https://github.com/Yilmar-sosa/curso-python
 - Sesiones 9–10 — Pair programming de un juego (≥80%): SIN INICIAR
 
 ## Conceptos completados
-- (ninguno todavía)
+- Sesión 1: algoritmo, descomposición de problemas, pseudocódigo libre (SI...ENTONCES / MIENTRAS...HACER), ciclo problema → datos → salida → pasos → decisiones → código → prueba → corrección.
+- Descubrió por sí mismo el algoritmo voraz (greedy) para billetes de cajero. 🏆
 
 ## Ejercicios resueltos
-- (ninguno todavía)
+- Pseudocódigo del café (completo, aprobado).
+- Cajero automático: `sesion01/cajero.py` — borrador comentado, lógica incompleta (ver pendientes).
 
 ## Mini-retos superados
-- (ninguno todavía)
+- Cerebro listo, mini-reto oficial AÚN NO completado (pendiente cerrar cajero + Texto 2).
 
 ## Simulacros y notas
 - (ninguno todavía)
@@ -34,10 +36,16 @@ Repositorio: https://github.com/Yilmar-sosa/curso-python
 - (ninguno todavía)
 
 ## Pendientes menores
-- (ninguno todavía)
+- Corregir en `sesion01/cajero.py` (todo sigue como comentarios):
+  1. While de la clave: `intentos` nunca cambia → no cuenta 3 intentos; falta «cuenta bloqueada».
+  2. Falta rama `SI NO` cuando monto > saldo (mensaje saldo insuficiente).
+  3. Condición del bucle de billetes truncada e incorrecta → debe repetir mientras monto > 0 y decidir si el billete cabe.
+  4. Agregar encabezados Datos de entrada / Salida esperada.
+  5. Texto 2: pasos numerados del 1 al N (instrucciones para humano).
+- Estudiante continuará escribiendo en Bloc de notas desde casa; retomar revisando su archivo.
 
 ## Plan próxima sesión
-- Sesión 1: pensamiento computacional y algoritmos
+- Revisar lo escrito desde casa → cerrar mini-reto Sesión 1 (Texto 1 + Texto 2) → iniciar Sesión 2 (bases de Python: print, input, variables, tipos).
 
 ## Ritual de cierre de sesión
 - Actualizar PROGRESS.md → git add -A → commit → push (curso de Python, repo curso-python)
