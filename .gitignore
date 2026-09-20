@@ -1,0 +1,30 @@
+# Python cache y bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Ejecutables y binarios
+*.exe
+*.o
+*.out
+
+# Archivos del sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Datos generados en tiempo de ejecución
+datos.txt
