@@ -3,7 +3,7 @@
 Estudiante: Yilmar
 Carpeta del curso: C:\Users\USUARIO\Documents\python
 Repositorio: https://github.com/Yilmar-sosa/curso-python
-Última sesión: 20 sep 2026 — Sesión 1 (en curso, estudiante continuará desde casa)
+Última sesión: 20 sep 2026 — Sesión 1 (en curso; estudiante pidió descanso, retomamos mañana)
 
 > Este curso es independiente del curso de C (Documents\c ↔ curso-c). No mezclar.
 
@@ -21,31 +21,40 @@ Repositorio: https://github.com/Yilmar-sosa/curso-python
 ## Conceptos completados
 - Sesión 1: algoritmo, descomposición de problemas, pseudocódigo libre (SI...ENTONCES / MIENTRAS...HACER), ciclo problema → datos → salida → pasos → decisiones → código → prueba → corrección.
 - Descubrió por sí mismo el algoritmo voraz (greedy) para billetes de cajero. 🏆
+- Saltó del pseudocódigo a código Python real (por iniciativa propia): usó variables, listas, `input()/int()`, f-strings, `while`, `if/elif/else`, `break`, `append`. Entiende la idea de `break` (ya lo aplicó bien en opción 1).
 
 ## Ejercicios resueltos
 - Pseudocódigo del café (completo, aprobado).
-- Cajero automático: `sesion01/cajero.py` — borrador comentado, lógica incompleta (ver pendientes).
+- Texto 2 (algoritmo numerado del cajero, pasos 1–22): hecho, aprobado con corrección de comparación invertida (paso 13 pasó a "mayor a 0").
+- `sesion01/cajero.py`: AHORA ES CÓDIGO PYTHON REAL, no comentarios.
+  - ✅ Algoritmo voraz de billetes funciona (480 → [100,100,100,100,50,20,10]).
+  - ✅ Contador de intentos funciona (mensaje con intentos restantes).
+  - ✅ Validación de saldo insuficiente funciona (retirar > saldo → rechaza).
+  - ✅ Comparación `<=` corregida (retirar todo el saldo es válido).
+  - ✅ `break` en opción 1 (consultar saldo) → termina bien.
+  - ❌ Faltan correcciones (ver pendientes).
 
 ## Mini-retos superados
-- Cerebro listo, mini-reto oficial AÚN NO completado (pendiente cerrar cajero + Texto 2).
+- Texto 1 (café): superado.
+- Texto 2 (cajero, pasos numerados 1–N): superado con corrección.
+- Cierre total del mini-reto Sesión 1: PENDIENTE (faltan bugs del cajero, abajo).
 
 ## Simulacros y notas
 - (ninguno todavía)
 
 ## Temas débiles detectados
-- (ninguno todavía)
+- Nada nuevo; el estudiante atrapó comparaciones invertidas y uso de `break` con guía.
+- Reto de próxima: no dejar el `break` solo en una rama (olvida que cada camino debe decidir su salida).
 
-## Pendientes menores
-- Corregir en `sesion01/cajero.py` (todo sigue como comentarios):
-  1. While de la clave: `intentos` nunca cambia → no cuenta 3 intentos; falta «cuenta bloqueada».
-  2. Falta rama `SI NO` cuando monto > saldo (mensaje saldo insuficiente).
-  3. Condición del bucle de billetes truncada e incorrecta → debe repetir mientras monto > 0 y decidir si el billete cabe.
-  4. Agregar encabezados Datos de entrada / Salida esperada.
-  5. Texto 2: pasos numerados del 1 al N (instrucciones para humano).
-- Estudiante continuará escribiendo en Bloc de notas desde casa; retomar revisando su archivo.
+## Pendientes (para retomar mañana)
+En `sesion01/cajero.py`:
+1. Opción 2 (retirar): falta `break` después de `print("Entregando billetes...")` → al terminar vuelve a pedir la clave (confirmado por ejecución).
+2. Bloqueo temprano: `if intentos == 2` bloquea después de 2 fallos; deben ser 3 intentos → esa condición debe ser `== 3` (o revisar el mensaje "Tiene N restantes" para que cuadre con 3 intentos).
+3. El saldo nunca se descuenta: tras retirar 480, saldo sigue mostrando 1000. Falta restar el monto (y decidir si se actualiza `saldoactual`).
+4. (Opcional) Probar la opción "cualquier otro número para salir" del menú — hoy no se probó.
 
 ## Plan próxima sesión
-- Revisar lo escrito desde casa → cerrar mini-reto Sesión 1 (Texto 1 + Texto 2) → iniciar Sesión 2 (bases de Python: print, input, variables, tipos).
+- Retomar: cerrar los 3 pendientes del cajero con preguntas guiadas → ejecutar y aprobar el mini-reto de Sesión 1 → iniciar Sesión 2 (bases de Python: print, input, variables, tipos, f-strings — ya los tocó de forma natural).
 
 ## Ritual de cierre de sesión
 - Actualizar PROGRESS.md → git add -A → commit → push (curso de Python, repo curso-python)
