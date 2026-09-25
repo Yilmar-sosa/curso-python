@@ -3,14 +3,14 @@
 Estudiante: Yilmar
 Carpeta del curso: C:\Users\USUARIO\Documents\python
 Repositorio: https://github.com/Yilmar-sosa/curso-python
-Última sesión: 21 sep 2026 — Sesión 2 COMPLETADA (calculadora de propina cerrada). Siguiente: Sesión 3.
+Última sesión: 24 sep 2026 — Sesión 3 EN CURSO (suma/promedio cerrados; falta mayor/menor y mini-reto).
 
 > Este curso es independiente del curso de C (Documents\c ↔ curso-c). No mezclar.
 
 ## Estado de sesiones
 - Sesión 1 — Pensamiento computacional y algoritmos: COMPLETADA ✅
 - Sesión 2 — Bases de programación en Python: COMPLETADA ✅ (mini-reto de la calculadora de propina cerrado)
-- Sesión 3 — Condicionales, listas y bucles: SIN INICIAR
+- Sesión 3 — Condicionales, listas y bucles: EN CURSO (listas y for vistos; falta mayor/menor + mini-reto)
 - Sesión 4 — Simulacro Módulo I (≥70%): SIN INICIAR
 - Sesión 5 — POO básica: SIN INICIAR
 - Sesión 6 — Agregación y composición: SIN INICIAR
@@ -30,7 +30,16 @@ Repositorio: https://github.com/Yilmar-sosa/curso-python
   - Operadores lógicos `and`/`or` ✅ (corrigió idea previa de que `and` imprime ambos)
   - Módulo `%` = residuo ✅ (corrigió idea de porcentaje → hoy domina 15%4=3, 9%3=0)
   - `TypeError` por mezclar texto con número ✅ (entendió que hay que convertir)
-- Sesión 2 — PENDIENTE de validar: `/` vs `//` (división normal vs entera). Ya validado: `float()` ✅ (lo usó en la calculadora), `NameError` ✅ (ya lo vivió en el cajero y lo explicó en el diagnóstico), mini-reto ✅ (calculadora de propina, ver abajo).
+- Sesión 2 — PENDIENTE de validar: `/` vs `//` (división normal vs entera). ✅ VALIDADO al inicio de Sesión 3: `7/2=3.5`, `7//2=3`, `7%2=1` (las 3 respuestas correctas).
+- Sesión 3 — conceptos completados:
+  - Listas: índices 0-based (traducción directa de C) ✅, `len()` ✅.
+  - Índices negativos: -1 último, -2 penúltimo... ✅ (explicó la regla solo).
+  - Slicing: `[inicio:fin]` con **fin sin incluir** ✅, `[inicio:]`, `[:fin]`, avanzar del slice: si <fin no se incluye; `[-2:]` no retrocede, avanza al final ✅.
+  - Regla clave: `lista[i]` = UNA caja vs `lista[i:j]` = tramo; el colon es lo único que abre tramo. El estudiante recaía en leer `[-N]` como `[-N:]` (le agregaba el colon mentalmente); se rompió el patrón con la "regla de emergencia" (un solo número = UNA caja) ✅.
+  - Detalle Python: `lista[:-3]` = "todo menos las 3 últimas" (confundió una vez, aclarado).
+  - `for i in range(n)` = 0..n-1 (off-by-one corregido: dijo 1,2,3,4 para range(4); realidad 0,1,2,3; se ató a `i < n` de C) ✅.
+  - `for valor in lista` (directo) vs `for i in range(len(lista))` (con índice); sabe elegir: posición → índice, valores → directo ✅.
+  - GOTCHA aprendido: la variable del bucle sobrevive tras el bucle con el último valor (imprimió 75 por usar `{nota}` tras el loop; halló por qué él mismo) ✅.
 
 ## Ejercicios resueltos
 - Pseudocódigo del café (completo, aprobado).
@@ -58,23 +67,30 @@ Repositorio: https://github.com/Yilmar-sosa/curso-python
   - `cuenta_total = cuenta + propina` ✅ (lo agregó tras pista: faltaba el total)
   - Muestra los 3 valores con f-strings y símbolo de moneda ✅ (agregó la propina en pesos tras recordatorio de requisitos)
   - Verificado con ejecución: entrada 40/10 → Cuenta $40.0, Propina $4.0, Total $44.0
+- Sesión 3 — `sesion03/suma_notas.py`: CERRADO ✅ (suma + promedio).
+  - Suma con acumulador `suma = 0; for nota in notas: suma = suma + nota` → 380 ✅.
+  - Promedio `suma / len(notas)` → 76.0 ✅.
+  - Adoptó convenciones de nombres (listas → `notas`, valor del bucle → `nota`).
+  - Corrigió bug: `print(f"... {nota}")` tras el bucle imprimía el último valor (75) — aprendió el gotcha de la variable sobreviviente ✅.
 
 ## Simulacros y notas
 - (ninguno todavía)
 
 ## Temas débiles detectados
-- Nada nuevo; el estudiante atrapó comparaciones invertidas y uso de `break` con guía.
-- Reto recurrente: olvida que cada camino debe decidir su salida (lo resolvió con guardia `if intentos != 3` y moviendo `opcion` fuera del bucle).
-- Aprendió por experiencia el `NameError`: usar una variable que solo existe en un `elif` fuera de ese bloque.
-- Detalle opcional de UX: al rechazar retirar > saldo imprime "Entregando billetes []" (no rompe, pero se puede pulir algún día).
+- Sesión 1: comparaciones invertidas y uso de `break` (resueltos con guía). Reto recurrente: olvida que cada camino debe decidir su salida (resuelto con guardia `if intentos != 3`).
+- Sesión 2: vivió y explicó el `NameError` (variable que solo existe en un `elif` usada fuera de ese bloque).
+- Sesión 3 (vigilar en próximos ejercicios):
+  - Off-by-one con `range(n)` (pensaba 1..n en vez de 0..n-1) — corregido atándolo a `i < n` de C.
+  - Recaída antigua: leía `lista[-N]` como `lista[-N:]` (agregaba colon mental) — roto con la "regla de emergencia"; vigilar.
+  - Gotcha de la variable del bucle que sobrevive — lo entendió y lo explicó él mismo.
 
-## Pendientes (para retomar mañana)
-- (Ninguno de la Sesión 2: básicos completados y mini-reto cerrado)
-- Validar `/` vs `//` (división normal vs entera) — quedó pendiente del diagnóstico de la Sesión 2; se puede validar al inicio de la Sesión 3 con 2 preguntas.
-- Iniciar **Sesión 3 — Condicionales, listas y bucles**: `if/elif/else` (ya los usa), listas (índices 0-based como C, `len()`, `append()`, slicing), `while` (ya lo usa), `for` con `range()` y sobre listas, `break`/`continue`, acumuladores, anidados. Mini-reto: procesar una lista (promedio, mayor/menor) trasladando lo de C.
+## Pendientes (para retomar)
+- **Sesión 3 — continuar:**
+  - Algoritmo de mayor/menor SIN `max()`/`min()` (patrón del campeón): el estudiante iba a describir los pasos del algoritmo en papel. NO ha codificado nada de esto todavía.
+  - Mini-reto de la Sesión 3: procesar una lista completa (promedio + mayor + menor) — lo armaremos sobre `suma_notas.py` o archivo nuevo en `sesion03/`.
 
 ## Plan próxima sesión
-- Sesión 3: validar `/` vs `//` → condicionales (repaso corto, ya los domina del cajero) → listas: índices, `len`, `append`, slicing (traducción directa de arreglos en C) → `for` con `range()` y `for valor in lista` → ejercicios de procesamiento de lista → mini-reto (promedio / mayor / menor).
+- Retomar Sesión 3: mayor/menor sin `max()`/`min()` (describir algoritmo en papel → traducir a Python → probar con la lista de notas) → mini-reto: procesar una lista completa (promedio, mayor, menor) → cerrar Sesión 3 → si sobra tiempo, repaso rápido de condicionales/`break`/`continue`.
 
 ## Ritual de cierre de sesión
 - Actualizar PROGRESS.md → git add -A → commit → push (curso de Python, repo curso-python)
